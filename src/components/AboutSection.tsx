@@ -80,7 +80,7 @@ const AboutSection = () => {
             <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
             <p className="text-lg text-muted-foreground">
               I'm Toyinbo Ayanfe, a passionate junior full-stack developer with a keen eye for 
-              design and a love for creating seamless user experiences. As an early-career 
+              design and a love for creating seamless user experiences. As an early-career
               developer, I focus on building modern, responsive websites and applications while 
               continuously growing my skills.
             </p>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import { Card } from './ui/card';
 
 interface ProjectCardProps {
   title: string;
@@ -7,7 +8,7 @@ interface ProjectCardProps {
   image: string;
   technologies: Array<{ name: string; color: string }>;
   demoLink: string;
-  codeLink: string;
+  githubLink: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -16,17 +17,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   technologies,
   demoLink,
-  codeLink,
+  githubLink,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
-      className="glass-card rounded-xl overflow-hidden transition-all duration-500 border border-border/50 h-full flex flex-col bg-background/30 backdrop-blur-sm"
+    <Card 
+      className="glass-card rounded-xl overflow-hidden transition-all duration-500 border-border/50 bg-background/30 backdrop-blur-sm h-full flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden h-64">
+      <div className="relative overflow-hidden h-56">
         <img 
           src={image} 
           alt={title} 
@@ -65,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </a>
           
           <a 
-            href={codeLink} 
+            href={githubLink} 
             className="flex items-center gap-2 text-neon-pink hover:text-neon-purple transition-colors"
             target="_blank"
             rel="noopener noreferrer"
@@ -75,7 +76,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </a>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

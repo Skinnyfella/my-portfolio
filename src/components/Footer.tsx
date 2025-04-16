@@ -44,7 +44,7 @@ const Footer = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a 
-              href="https://github.com/Skinnyfella" 
+              href="https://x.com/Iamskinny_fella" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center transition-colors hover:bg-muted"

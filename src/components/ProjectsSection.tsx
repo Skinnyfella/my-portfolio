@@ -1,20 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
-import { Card } from './ui/card';
-
-type Technology = {
-  name: string;
-  color: string;
-};
-
-type Project = {
-  title: string;
-  description: string;
-  image: string;
-  technologies: Technology[];
-  demoLink: string;
-  codeLink: string;
-};
+import React, { useRef } from 'react';
+import ProjectCard from './ProjectCard';
 
 const ProjectsSection = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -29,7 +14,7 @@ const ProjectsSection = () => {
         { name: 'Bootstraps', color: 'bg-purple-600' }
       ],
       demoLink: 'https://skinnyfella.github.io/sugar-and-crumb-bakery/',
-      codeLink: 'https://github.com/Skinnyfella/sugar-and-crumb-bakery'
+      githubLink: 'https://github.com/Skinnyfella/sugar-and-crumb-bakery'
     },
     {
       title: 'Travel Guide App',
@@ -41,7 +26,7 @@ const ProjectsSection = () => {
         { name: 'Node/Express', color: 'bg-gray-700' }
       ],
       demoLink: 'https://trip-scout.vercel.app/',
-      codeLink: 'https://github.com/Skinnyfella/TripScoot'
+      githubLink: 'https://github.com/Skinnyfella/TripScoot'
     },
     {
       title: 'Task Management App',
@@ -54,7 +39,7 @@ const ProjectsSection = () => {
         { name: 'Supabase', color: 'bg-emerald-600' }
       ],
       demoLink: 'https://task-manager-rho-flax.vercel.app',
-      codeLink: 'https://github.com/Skinnyfella/task-manager'
+      githubLink: 'https://github.com/Skinnyfella/task-manager'
     },
     {
       title: 'Personal Portfolio Website',
@@ -66,38 +51,9 @@ const ProjectsSection = () => {
         { name: 'Tailwind', color: 'bg-teal-500' }
       ],
       demoLink: '#',
-      codeLink: 'https://github.com/Skinnyfella/motion-master-portfolio'
+      githubLink: 'https://github.com/Skinnyfella/motion-master-portfolio'
     }
   ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const projectCards = entry.target.querySelectorAll('.project-card');
-            projectCards.forEach((card, index) => {
-              setTimeout(() => {
-                card.classList.add('animate-fade-in');
-              }, index * 200);
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (projectsRef.current) {
-      observer.observe(projectsRef.current);
-    }
-
-    return () => {
-      if (projectsRef.current) {
-        observer.unobserve(projectsRef.current);
-      }
-    };
-  }, []);
 
   return (
     <section id="projects" className="py-20 bg-background/30 backdrop-blur-sm">
@@ -115,55 +71,10 @@ const ProjectsSection = () => {
 
         <div ref={projectsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="project-card opacity-0 glass-card overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(155,135,245,0.3)] bg-background/30 backdrop-blur-sm border-border"
-            >
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex} 
-                      className={`text-xs px-3 py-1 rounded-full text-white ${tech.color}`}
-                    >
-                      {tech.name}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex gap-4">
-                  <a 
-                    href={project.demoLink} 
-                    className="flex items-center gap-2 text-neon-cyan hover:text-neon-blue transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>Live Demo</span>
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                  <a 
-                    href={project.codeLink} 
-                    className="flex items-center gap-2 text-neon-pink hover:text-neon-purple transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span>Code</span>
-                    <Github className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </Card>
+            <ProjectCard
+              key={index}
+              {...project}
+            />
           ))}
         </div>
       </div>

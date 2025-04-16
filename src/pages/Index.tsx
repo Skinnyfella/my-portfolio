@@ -1,16 +1,19 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 
 const Index = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow pt-16"> {/* Add padding for fixed navbar */}
+      <main className="flex-grow pt-16">
         <Outlet />
       </main>
-      <Footer />
+      {!isHomePage && <Footer />}
       <ScrollToTop />
     </div>
   );

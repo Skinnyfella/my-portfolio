@@ -26,7 +26,7 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex gap-4">
             <a 
-              href="https://github.com" 
+              href=" https://github.com/Skinnyfella" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center transition-colors hover:bg-muted"
@@ -35,7 +35,7 @@ const Footer = () => {
               <Github className="h-5 w-5" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/skinnyfella/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center transition-colors hover:bg-muted"
@@ -44,7 +44,7 @@ const Footer = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a 
-              href="https://twitter.com" 
+              href="https://github.com/Skinnyfella" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center transition-colors hover:bg-muted"

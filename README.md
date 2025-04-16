@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+# Modern Portfolio Website
 
-## Project info
+A modern, animated portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, glass-morphism design, and responsive layouts.
 
-**URL**: https://lovable.dev/projects/1b204861-30f7-4cc3-95fc-7133aa010ad8
+## ✨ Features
 
-## How can I edit this code?
+- 🎨 Modern glass-morphism design
+- 🌟 Smooth page transitions and animations
+- 📱 Fully responsive across all devices
+- 🎯 Interactive project cards with hover effects
+- 🌐 Particle background effects
+- 📝 Contact form integration
+- 🚀 Fast loading with Vite
+- 🎨 Custom UI components with shadcn/ui
 
-There are several ways of editing your application.
+## 🛠️ Built With
 
-**Use Lovable**
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- shadcn/ui
+- Lucide Icons
+- React Router DOM
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1b204861-30f7-4cc3-95fc-7133aa010ad8) and start prompting.
+## 🚀 Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v16 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone the repository
+```bash
+git clone [your-repo-url]
+cd motion-master-portfolio
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Start the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-**Use GitHub Codespaces**
+The site will be available at `http://localhost:5173`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🏗️ Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/     # React components
+├── pages/         # Page components
+├── hooks/         # Custom React hooks
+├── lib/          # Utility functions
+└── ui/           # UI components from shadcn/ui
+```
 
-This project is built with:
+## 📝 Features Overview
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Home Page**: Dynamic hero section with particle effects
+- **About**: Personal information and skills showcase
+- **Projects**: Interactive project cards with live demos
+- **Contact**: Contact form with modern styling
+- **Responsive Design**: Mobile-first approach
+- **Animations**: Smooth page transitions and hover effects
 
-## How can I deploy this project?
+## 🎨 Customization
 
-Simply open [Lovable](https://lovable.dev/projects/1b204861-30f7-4cc3-95fc-7133aa010ad8) and click on Share -> Publish.
+The project uses Tailwind CSS for styling. You can customize:
 
-## Can I connect a custom domain to my Lovable project?
+- Colors in `tailwind.config.ts`
+- Components in `src/components`
+- UI elements in `src/components/ui`
+- Page content in `src/pages`
 
-Yes, you can!
+## 📄 License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!

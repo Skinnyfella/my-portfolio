@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 type Skill = {
@@ -68,7 +67,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-pink to-neon-blue opacity-20 blur-xl animate-pulse"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-neon-blue">
                 <img 
-                  src="public/lovable-uploads/7e736fc7-8fab-432d-a6f6-38a7a194d265.png" 
+                  src="/lovable-uploads/7e736fc7-8fab-432d-a6f6-38a7a194d265.png" 
                   alt="Profile" 
                   className="w-full h-full object-cover"
                 />

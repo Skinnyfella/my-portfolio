@@ -1,14 +1,10 @@
-
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Handle scrolling effects
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -18,11 +14,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu on route change
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location]);
-
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -31,58 +22,30 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar transition-all duration-300 ${scrolled ? 'py-3 shadow-md' : 'py-4'}`}>
-      {/* Logo */}
-      <Link to="/" className="flex items-center gap-2 animate-fade-in">
-        <div className="w-10 h-10 bg-neon-pink rounded-md flex items-center justify-center neon-glow">
-          <span className="text-white font-bold text-lg">P</span>
-        </div>
-        <span className="font-bold text-xl tracking-tight">PORTFOLIO</span>
-      </Link>
-
-      {/* Desktop Navigation */}
-      <div className="hidden lg:flex items-center gap-8 animate-fade-in">
-        {navItems.map((item) => (
-          <Link 
-            key={item.name} 
-            to={item.path}
-            className={`relative px-1 py-2 link-underline transition-colors duration-300 
-              ${location.pathname === item.path ? 'text-neon-pink' : 'text-foreground hover:text-neon-blue'}`}
-          >
-            {item.name}
-          </Link>
-        ))}
-      </div>
-
-      {/* Mobile Navigation Trigger */}
-      <div className="lg:hidden flex items-center">
-        <button 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="text-foreground p-2 neon-glow"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu with added padding */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 top-[72px] z-40 bg-background/95 backdrop-blur-md lg:hidden animate-fade-in">
-          <div className="flex flex-col items-center justify-center h-full gap-8 -mt-20">
-            {navItems.map((item, index) => (
-              <Link 
-                key={item.name} 
-                to={item.path}
-                className={`text-2xl font-medium transition-all duration-300 animate-fade-in neon-glow
-                  ${location.pathname === item.path ? 'text-neon-pink' : 'text-foreground hover:text-neon-blue'}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {item.name}
-              </Link>
-            ))}
+    <nav className={`navbar fixed top-0 left-0 right-0 w-full z-50 bg-background/95 backdrop-blur-sm transition-all duration-300 ${scrolled ? 'py-2 shadow-md' : 'py-3'}`}>
+      <div className="container mx-auto px-4 flex flex-row flex-wrap items-center justify-between gap-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 animate-fade-in shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-neon-pink rounded-md flex items-center justify-center neon-glow">
+            <span className="text-white font-bold text-sm sm:text-lg">P</span>
           </div>
+          <span className="font-bold text-base sm:text-xl tracking-tight">PORTFOLIO</span>
+        </Link>
+
+        {/* Navigation */}
+        <div className="flex flex-row flex-wrap items-center gap-3 sm:gap-6 animate-fade-in">
+          {navItems.map((item) => (
+            <Link 
+              key={item.name} 
+              to={item.path}
+              className={`relative px-1 py-1 text-sm sm:text-base transition-colors duration-300 link-underline 
+                ${location.pathname === item.path ? 'text-neon-pink' : 'text-foreground hover:text-neon-blue'}`}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };

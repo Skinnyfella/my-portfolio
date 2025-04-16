@@ -1,4 +1,3 @@
-
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 import ParticleBackground from '../components/ParticleBackground';

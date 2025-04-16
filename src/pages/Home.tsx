@@ -1,9 +1,5 @@
 
 import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import ServicesSection from '../components/ServicesSection';
-import ProjectsSection from '../components/ProjectsSection';
-import ContactSection from '../components/ContactSection';
 import ParticleBackground from '../components/ParticleBackground';
 import { motion } from 'framer-motion';
 
@@ -18,10 +14,6 @@ const Home = () => {
     >
       <ParticleBackground />
       <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <ContactSection />
     </motion.div>
   );
 };

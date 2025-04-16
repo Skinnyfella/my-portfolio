@@ -1,6 +1,6 @@
-
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import { Card, CardContent } from './ui/card';
 
 type Technology = {
   name: string;
@@ -63,12 +63,7 @@ const ProjectsSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const projectCards = entry.target.querySelectorAll('.project-card');
-            projectCards.forEach((card, index) => {
-              setTimeout(() => {
-                card.classList.add('animate-fade-in');
-              }, index * 200);
-            });
+            entry.target.classList.add('animate-fade-in');
             observer.unobserve(entry.target);
           }
         });
@@ -88,31 +83,28 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Projects</h2>
-          <div className="h-1 w-20 bg-neon-purple mx-auto mt-4 mb-8"></div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">My Work</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Here's a selection of my recent projects. Each project reflects my passion for creating beautiful,
+            functional, and user-friendly applications.
+          </p>
         </div>
 
-        <div ref={projectsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={projectsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="project-card opacity-0 glass-card overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(155,135,245,0.3)]">
-              {/* Project Image */}
-              <div className="h-56 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:transform hover:scale-110"
-                />
-              </div>
-              
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+            <Card key={index} className="overflow-hidden bg-card/50 backdrop-blur border-border">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-64 object-cover"
+              />
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-muted-foreground mb-4">{project.description}</p>
                 
-                {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, techIndex) => (
                     <span 
@@ -124,29 +116,28 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 
-                {/* Links */}
                 <div className="flex gap-4">
                   <a 
                     href={project.demoLink} 
-                    className="flex items-center gap-1 text-neon-cyan hover:text-neon-blue transition-colors"
+                    className="flex items-center gap-2 text-neon-cyan hover:text-neon-blue transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="text-sm">Live Demo</span>
+                    <span>Live Demo</span>
                     <ExternalLink className="h-4 w-4" />
                   </a>
                   <a 
                     href={project.codeLink} 
-                    className="flex items-center gap-1 text-neon-pink hover:text-neon-purple transition-colors"
+                    className="flex items-center gap-2 text-neon-pink hover:text-neon-purple transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="text-sm">Code</span>
+                    <span>Code</span>
                     <Github className="h-4 w-4" />
                   </a>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

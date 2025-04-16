@@ -40,7 +40,7 @@ const Navbar = () => {
         <span className="font-bold text-xl tracking-tight">PORTFOLIO</span>
       </Link>
 
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation (>= 1020px) */}
       <div className="hidden lg:flex items-center gap-8 animate-fade-in">
         {navItems.map((item) => (
           <Link 
@@ -54,7 +54,7 @@ const Navbar = () => {
         ))}
       </div>
 
-      {/* Mobile Navigation Trigger */}
+      {/* Mobile Navigation (< 1020px) */}
       <div className="lg:hidden flex items-center">
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -65,10 +65,10 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu with added padding */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 top-[72px] z-40 bg-background/95 backdrop-blur-md lg:hidden animate-fade-in">
-          <div className="flex flex-col items-center justify-center h-full gap-8 -mt-20">
+          <div className="flex flex-col items-center justify-center h-full gap-8">
             {navItems.map((item, index) => (
               <Link 
                 key={item.name} 

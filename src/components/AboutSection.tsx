@@ -1,0 +1,122 @@
+
+import { useEffect, useRef } from 'react';
+
+type Skill = {
+  name: string;
+  percentage: number;
+  color: string;
+};
+
+const AboutSection = () => {
+  const skillsRef = useRef<HTMLDivElement>(null);
+
+  const skills: Skill[] = [
+    { name: 'React', percentage: 70, color: 'from-neon-cyan to-neon-blue' },
+    { name: 'JavaScript', percentage: 70, color: 'from-neon-yellow to-neon-blue' },
+    { name: 'Node.js/Express', percentage: 75, color: 'from-neon-purple to-neon-pink' },
+    { name: 'CSS/Tailwind/SCSS', percentage: 63, color: 'from-neon-pink to-neon-purple' },
+    { name: 'Database Management', percentage: 72, color: 'from-neon-cyan to-neon-blue' }
+  ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Find all progress bars within this section
+            const progressBars = entry.target.querySelectorAll('.skills-progress-bar');
+            progressBars.forEach((bar, index) => {
+              if (bar instanceof HTMLElement) {
+                // Set a CSS variable to control the animation width
+                bar.style.setProperty('--progress-width', `${skills[index].percentage}%`);
+                bar.classList.add('animate-progress');
+              }
+            });
+            // Unobserve after animation is triggered
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => {
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
+    };
+  }, [skills]);
+
+  return (
+    <section id="about" className="py-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            About <span className="text-gradient-pink">Me</span>
+          </h2>
+          <div className="h-1 w-20 bg-neon-pink mx-auto mt-4 mb-8"></div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Profile Image */}
+          <div className="flex justify-center">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 animate-float">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-pink to-neon-blue opacity-20 blur-xl animate-pulse"></div>
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-neon-blue">
+                <img 
+                  src="public/lovable-uploads/7e736fc7-8fab-432d-a6f6-38a7a194d265.png" 
+                  alt="Profile" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* About Content */}
+          <div className="space-y-6 animate-fade-in">
+            <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
+            <p className="text-lg text-muted-foreground">
+              I'm Toyinbo Ayanfe, a passionate junior full-stack developer with a keen eye for 
+              design and a love for creating seamless user experiences. As an early-career 
+              developer, I focus on building modern, responsive websites and applications while 
+              continuously growing my skills.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              My approach combines technical knowledge with creative problem-solving, 
+              enabling me to deliver solutions that are both functional and visually appealing. I'm 
+              dedicated to writing clean, efficient code and staying updated with the latest 
+              technologies and best practices.
+            </p>
+          </div>
+        </div>
+
+        {/* Skills */}
+        <div ref={skillsRef} className="mt-20">
+          <h3 className="text-2xl font-bold mb-8 text-center">My Skills</h3>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {skills.map((skill, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="flex justify-between mb-2">
+                  <span className="font-medium">{skill.name}</span>
+                  <span className="text-muted-foreground">{skill.percentage}%</span>
+                </div>
+                <div className="skills-progress">
+                  <div 
+                    className={`skills-progress-bar bg-gradient-to-r ${skill.color}`}
+                    style={{ width: '0%' }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;

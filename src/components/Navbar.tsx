@@ -29,7 +29,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 animate-fade-in shrink-0">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-neon-pink rounded-md flex items-center justify-center neon-glow">
-            <span className="text-white font-bold text-sm sm:text-lg">P</span>
+            
           </div>
           <span className="font-bold text-base sm:text-xl tracking-tight">PORTFOLIO</span>
         </Link>

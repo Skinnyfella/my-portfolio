@@ -12,12 +12,7 @@ const Footer = () => {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Logo & Tagline */}
           <div className="mb-6 md:mb-0 text-center md:text-left">
-            <Link to="/" className="inline-flex items-center gap-2">
-              <div className="w-8 h-8 bg-neon-pink rounded-md flex items-center justify-center neon-glow">
-                <span className="text-white font-bold text-sm">P</span>
-              </div>
-            
-            </Link>
+           
             <p className="text-sm text-muted-foreground mt-2">
               Bringing Your Ideas into Reality with Tech
             </p>

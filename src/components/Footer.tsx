@@ -16,7 +16,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-neon-pink rounded-md flex items-center justify-center neon-glow">
                 <span className="text-white font-bold text-sm">P</span>
               </div>
-              <span className="font-bold text-lg tracking-tight">PORTFOLIO</span>
+            
             </Link>
             <p className="text-sm text-muted-foreground mt-2">
               Bringing Your Ideas into Reality with Tech

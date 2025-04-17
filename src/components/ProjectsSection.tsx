@@ -50,8 +50,8 @@ const ProjectsSection = () => {
         { name: 'TypeScript', color: 'bg-blue-600' },
         { name: 'Tailwind', color: 'bg-teal-500' }
       ],
-      demoLink: '#',
-      githubLink: 'https://github.com/Skinnyfella/motion-master-portfolio'
+      demoLink: 'https://my-portfolio-nine-theta-80.vercel.app/',
+      githubLink: '#'
     }
   ];
 

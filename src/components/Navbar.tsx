@@ -31,7 +31,9 @@ const Navbar = () => {
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-neon-pink rounded-md flex items-center justify-center neon-glow">
             
           </div>
-          <span className="font-bold text-base sm:text-xl tracking-tight">PORTFOLIO</span>
+          <span className="font-bold text-base sm:text-xl tracking-tight">Ayanfe Toyinbo
+
+</span>
         </Link>
 
         {/* Navigation */}

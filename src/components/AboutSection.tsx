@@ -79,7 +79,7 @@ const AboutSection = () => {
           <div className="space-y-6 animate-fade-in">
             <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
             <p className="text-lg text-muted-foreground">
-              I'm Toyinbo Ayanfe, a passionate junior full-stack developer with a keen eye for 
+              I'm Ayanfe Toyinbo, a passionate junior full-stack developer with a keen eye for 
               design and a love for creating seamless user experiences. As an early-career
               developer, I focus on building modern, responsive websites and applications while 
               continuously growing my skills.
@@ -111,6 +111,26 @@ const AboutSection = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Certification */}
+        <div className="mt-12 p-6 bg-slate-800/50 rounded-lg backdrop-blur-sm border border-slate-700/50">
+          <h3 className="text-xl font-semibold mb-4 text-white">Certification</h3>
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex-1 min-w-[200px]">
+              <h4 className="font-medium text-white">Full Stack Web Development</h4>
+              <p className="text-muted-foreground">Udemy BootCamp</p>
+              <p className="text-sm text-muted-foreground">2024</p>
+            </div>
+            <a 
+              href="http://ude.my/UC-b8d8ed60-4702-425b-a902-d1ea1951f60f" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-4 py-2 border border-slate-700 rounded-md hover:bg-slate-700/50 transition-colors duration-300 text-white"
+            >
+              View Certificate
+            </a>
           </div>
         </div>
       </div>

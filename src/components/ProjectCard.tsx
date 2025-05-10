@@ -9,6 +9,7 @@ interface ProjectCardProps {
   technologies: Array<{ name: string; color: string }>;
   demoLink: string;
   githubLink: string;
+  tutorialLink?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -18,12 +19,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
   demoLink,
   githubLink,
+  tutorialLink,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Card 
-      className="glass-card rounded-xl overflow-hidden transition-all duration-500 border-border/50 bg-background/30 backdrop-blur-sm h-full flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

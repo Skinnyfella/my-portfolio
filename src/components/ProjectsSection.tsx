@@ -6,17 +6,6 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: 'Landing Page',
-      description: 'A landing page for a bakery with a modern design and smooth animations. It includes sections for products, testimonials, and a contact form.',
-      image: '/lovable-uploads/bakrey.PNG',
-      technologies: [
-        { name: 'CSS', color: 'bg-blue-600' },
-        { name: 'Bootstraps', color: 'bg-purple-600' }
-      ],
-      demoLink: 'https://skinnyfella.github.io/sugar-and-crumb-bakery/',
-      githubLink: 'https://github.com/Skinnyfella/sugar-and-crumb-bakery'
-    },
-    {
       title: 'Travel Guide App',
       description: 'A modern travel guide that helps travelers and locals discover exciting places around them. With a sleek glass-morphic design and intuitive interface, users can easily find hotels, restaurants, and fun activities in any location.',
       image: '/lovable-uploads/trip.PNG',
@@ -27,6 +16,19 @@ const ProjectsSection = () => {
       ],
       demoLink: 'https://trip-scout.vercel.app/',
       githubLink: 'https://github.com/Skinnyfella/TripScoot'
+    },
+    {
+      title: 'full-stack e-commerce platform',
+      description: 'A modern, full-stack e-commerce platform with separate admin and customer interfaces.',
+      image: '/lovable-uploads/ecomnmerce.PNG',
+      technologies: [
+        { name: 'React', color: 'bg-cyan-500' },
+        { name: 'API', color: 'bg-green-600' },
+        { name: 'Node/Express', color: 'bg-gray-700' },
+        { name: 'Supabase', color: 'bg-emerald-600' }
+      ],
+      demoLink: 'https://full-stack-e-commerce-green.vercel.app/',
+      githubLink: 'https://github.com/Skinnyfella/full-stack-e-commerce'
     },
     {
       title: 'Task Management App',
@@ -41,6 +43,18 @@ const ProjectsSection = () => {
       demoLink: 'https://task-manager-rho-flax.vercel.app',
       githubLink: 'https://github.com/Skinnyfella/task-manager'
     },
+    {
+      title: 'Landing Page',
+      description: 'A landing page for a bakery with a modern design and smooth animations. It includes sections for products, testimonials, and a contact form.',
+      image: '/lovable-uploads/bakrey.PNG',
+      technologies: [
+        { name: 'CSS', color: 'bg-blue-600' },
+        { name: 'Bootstraps', color: 'bg-purple-600' }
+      ],
+      demoLink: 'https://skinnyfella.github.io/sugar-and-crumb-bakery/',
+      githubLink: 'https://github.com/Skinnyfella/sugar-and-crumb-bakery'
+    },
+    
     {
       title: 'Personal Portfolio Website',
       description: 'A sleek portfolio website showcasing my skills, projects, and journey as a developer. Features a responsive design, smooth animations, and a particle background.',

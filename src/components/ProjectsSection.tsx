@@ -15,7 +15,8 @@ const ProjectsSection = () => {
         { name: 'Node/Express', color: 'bg-gray-700' }
       ],
       demoLink: 'https://trip-scout.vercel.app/',
-      githubLink: 'https://github.com/Skinnyfella/TripScoot'
+      githubLink: 'https://github.com/Skinnyfella/TripScoot',
+      videoLink: 'https://x.com/Iamskinny_fella/status/1911745913736802521'
     },
     {
       title: 'full-stack e-commerce platform',
@@ -28,7 +29,8 @@ const ProjectsSection = () => {
         { name: 'Supabase', color: 'bg-emerald-600' }
       ],
       demoLink: 'https://full-stack-e-commerce-green.vercel.app/',
-      githubLink: 'https://github.com/Skinnyfella/full-stack-e-commerce'
+      githubLink: 'https://github.com/Skinnyfella/full-stack-e-commerce',
+      videoLink: 'https://x.com/Iamskinny_fella/status/1920901009703841922'
     },
     {
       title: 'Task Management App',
@@ -41,7 +43,8 @@ const ProjectsSection = () => {
         { name: 'Supabase', color: 'bg-emerald-600' }
       ],
       demoLink: 'https://task-manager-rho-flax.vercel.app',
-      githubLink: 'https://github.com/Skinnyfella/task-manager'
+      githubLink: 'https://github.com/Skinnyfella/task-manager',
+      videoLink: 'https://x.com/Iamskinny_fella/status/1904578768552767816'
     },
     {
       title: 'Landing Page',
@@ -52,7 +55,8 @@ const ProjectsSection = () => {
         { name: 'Bootstraps', color: 'bg-purple-600' }
       ],
       demoLink: 'https://skinnyfella.github.io/sugar-and-crumb-bakery/',
-      githubLink: 'https://github.com/Skinnyfella/sugar-and-crumb-bakery'
+      githubLink: 'https://github.com/Skinnyfella/sugar-and-crumb-bakery',
+      
     },
     
     {

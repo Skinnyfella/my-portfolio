@@ -10,6 +10,7 @@ interface ProjectCardProps {
   demoLink: string;
   githubLink: string;
   tutorialLink?: string;
+  videoLink?: string; // Added for video demo
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -20,43 +21,44 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   demoLink,
   githubLink,
   tutorialLink,
+  videoLink,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
+    <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      className="flex flex-col"
     >
       <div className="relative overflow-hidden h-56">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover transition-transform duration-700 ease-out" 
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-700 ease-out"
           style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
         />
-        <div 
-          className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"
-        ></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
       </div>
-      
+
       <div className="p-6 flex-grow flex flex-col">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p className="text-muted-foreground mb-4 flex-grow">{description}</p>
-        
+
         <div className="flex flex-wrap gap-2 mb-6">
           {technologies.map((tech, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className={`text-xs px-3 py-1 rounded-full text-white ${tech.color}`}
             >
               {tech.name}
             </span>
           ))}
         </div>
-        
+
         <div className="flex gap-4 mt-auto">
-          <a 
-            href={demoLink} 
+          <a
+            href={demoLink}
             className="flex items-center gap-2 text-neon-cyan hover:text-neon-blue transition-colors"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,9 +66,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <span>Live Demo</span>
             <ExternalLink className="h-4 w-4" />
           </a>
-          
-          <a 
-            href={githubLink} 
+
+          <a
+            href={githubLink}
             className="flex items-center gap-2 text-neon-pink hover:text-neon-purple transition-colors"
             target="_blank"
             rel="noopener noreferrer"
@@ -74,6 +76,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <span>Code</span>
             <Github className="h-4 w-4" />
           </a>
+
+          {videoLink && (
+            <a
+              href={videoLink}
+              className="flex items-center gap-2 text-neon-green hover:text-neon-lime transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Watch Video</span>
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          )}
         </div>
       </div>
     </Card>

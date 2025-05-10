@@ -47,6 +47,20 @@ const ProjectsSection = () => {
       videoLink: 'https://x.com/Iamskinny_fella/status/1904578768552767816'
     },
     {
+      title: 'Task Management App',
+      description: 'A mobile application for managing tasks and projects with team collaboration features.',
+      image: '/lovable-uploads/task.PNG',
+      technologies: [
+        { name: 'React', color: 'bg-cyan-500' },
+        { name: 'Node/Express', color: 'bg-gray-700' },
+        { name: 'Firebase', color: 'bg-yellow-600' },
+        { name: 'Supabase', color: 'bg-emerald-600' }
+      ],
+      demoLink: 'https://task-manager-rho-flax.vercel.app',
+      githubLink: 'https://github.com/Skinnyfella/task-manager',
+      videoLink: 'https://x.com/Iamskinny_fella/status/1904578768552767816'
+    },
+    {
       title: 'Landing Page',
       description: 'A landing page for a bakery with a modern design and smooth animations. It includes sections for products, testimonials, and a contact form.',
       image: '/lovable-uploads/bakrey.PNG',

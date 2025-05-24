@@ -33,6 +33,20 @@ const ProjectsSection = () => {
       videoLink: 'https://x.com/Iamskinny_fella/status/1920901009703841922'
     },
     {
+      title: 'Healthcare Appointment Scheduler',
+      description: 'A modern, full-stack healthcare appointment scheduling system.This application allows patients to easily schedule, manage, and track their healthcare appointments.',
+      image: '/lovable-uploads/health.PNG',
+      technologies: [
+        { name: 'React', color: 'bg-cyan-500' },
+        { name: 'API', color: 'bg-green-600' },
+        { name: 'Node/Express', color: 'bg-gray-700' },
+        { name: 'Supabase', color: 'bg-emerald-600' }
+      ],
+      demoLink: ' https://healthcare-appointment-scheduler.vercel.app/',
+      githubLink: 'https://github.com/Skinnyfella/Healthcare-Appointment-Scheduler',
+      videoLink: 'https://x.com/Iamskinny_fella/status/1925568240098394478'
+    },
+    {
       title: 'Task Management App',
       description: 'A mobile application for managing tasks and projects with team collaboration features.',
       image: '/lovable-uploads/task.PNG',

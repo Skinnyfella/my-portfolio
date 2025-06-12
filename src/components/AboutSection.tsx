@@ -12,7 +12,9 @@ const AboutSection = () => {
   const skills: Skill[] = [
     { name: 'React', percentage: 70, color: 'from-neon-cyan to-neon-blue' },
     { name: 'JavaScript', percentage: 70, color: 'from-neon-yellow to-neon-blue' },
+    { name: 'Python', percentage: 75, color: 'from-[#306998] to-[#FFD43B]' },
     { name: 'Node.js/Express', percentage: 75, color: 'from-neon-purple to-neon-pink' },
+    { name: 'Automation/Scripting', percentage: 70, color: 'from-[#FF6B6B] to-[#4ECDC4]' },
     { name: 'CSS/Tailwind/SCSS', percentage: 63, color: 'from-neon-pink to-neon-purple' },
     { name: 'Database Management', percentage: 72, color: 'from-neon-cyan to-neon-blue' }
   ];
@@ -79,16 +81,10 @@ const AboutSection = () => {
           <div className="space-y-6 animate-fade-in">
             <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
             <p className="text-lg text-muted-foreground">
-              I'm Ayanfe Toyinbo, a passionate junior full-stack developer with a keen eye for 
-              design and a love for creating seamless user experiences. As an early-career
-              developer, I focus on building modern, responsive websites and applications while 
-              continuously growing my skills.
+            I'm Ayanfe Toyinbo, a junior full-stack developer with a backend focus and a passion for building clean, scalable systems. I bring a strong eye for design and a commitment to seamless user experiences — whether it's crafting responsive UIs or engineering robust APIs.
             </p>
             <p className="text-lg text-muted-foreground">
-              My approach combines technical knowledge with creative problem-solving, 
-              enabling me to deliver solutions that are both functional and visually appealing. I'm 
-              dedicated to writing clean, efficient code and staying updated with the latest 
-              technologies and best practices.
+            I thrive at the intersection of creativity and logic, combining technical depth with problem-solving to build modern web apps, automation tools, and data-driven solutions. I'm continuously learning, writing efficient code, and staying up to date with best practices in development, architecture, and workflow automation.
             </p>
           </div>
         </div>

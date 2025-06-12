@@ -39,22 +39,30 @@ const HeroSection = () => {
             </h1>
           </div>
 
-          <h2 className="text-xl md:text-2xl text-muted-foreground mt-4">
-            Hi, I'm Ayanfe. I turn complex problems into clean, efficient code.
+          <h2 className="text-xl md:text-2xl text-muted-foreground mt-2">
+            Backend-Focused | Automation-Ready
           </h2>
 
+          <p className="text-lg md:text-xl max-w-2xl mt-6">
+            Hi, I'm Ayanfe — I turn complex ideas into clean, scalable code.
+            From dynamic UIs to backend automation systems, I build with performance and purpose.
+          </p>
+
           <div className="mt-8 space-y-6">
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center">
+              <p className="text-lg mb-3">Tech I Work With:</p>
               <div className="flex flex-wrap justify-center gap-y-2 gap-x-3 text-lg max-w-2xl">
-                <span className="text-neon-blue">JavaScript</span>
-                <span className="text-muted-foreground">|</span>
-                <span className="text-neon-cyan">React</span>
-                <span className="text-muted-foreground">|</span>
-                <span className="text-neon-purple">Node.js</span>
-                <span className="text-muted-foreground">|</span>
-                <span className="text-neon-pink">SQL</span>
-                <span className="text-muted-foreground">|</span>
-                <span className="text-neon-yellow">REST APIs</span>
+                <span className="text-[#F7DF1E]">JavaScript</span>
+                <span className="text-muted-foreground">•</span>
+                <span className="text-[#61DAFB]">React</span>
+                <span className="text-muted-foreground">•</span>
+                <span className="text-[#68A063]">Node.js</span>
+                <span className="text-muted-foreground">•</span>
+                <span className="text-[#306998]">Python</span>
+                <span className="text-muted-foreground">•</span>
+                <span className="text-[#336791]">PostgreSQL</span>
+                <span className="text-muted-foreground">•</span>
+                <span className="text-[#FF6B6B]">REST APIs</span>
               </div>
             </div>
 

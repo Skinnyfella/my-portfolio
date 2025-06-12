@@ -19,6 +19,19 @@ const ProjectsSection = () => {
       videoLink: 'https://x.com/Iamskinny_fella/status/1911745913736802521'
     },
     {
+      title: 'Books to Scrape - Web Scraper',
+      description: 'A simple Python-based scraper that extracts book data from books.toscrape.com. It collects information such as book titles, prices, ratings, and availability, and saves the data in a structured format.',
+      image: '/lovable-uploads/web scrap.PNG',
+      technologies: [
+        { name: 'requests', color: 'bg-cyan-500' },
+        { name: 'beautifulsoup4', color: 'bg-green-600' },
+  
+      ],
+      demoLink: '#',
+      githubLink: 'https://github.com/Skinnyfella/TripScoot',
+      videoLink: '#'
+    },
+    {
       title: 'full-stack e-commerce platform',
       description: 'A modern, full-stack e-commerce platform with separate admin and customer interfaces.',
       image: '/lovable-uploads/ecomnmerce.PNG',
